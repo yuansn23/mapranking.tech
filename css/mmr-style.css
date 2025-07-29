@@ -1,0 +1,155 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+.mmr-result-title{font-size: 20px !important;margin-bottom: 10px !important;}
+h2.mmr-result-title{font-size: 30px !important;margin-top: 0px !important}
+.single-content h2.mmr-result-title{font-size: 30px !important;margin-top: 0px !important}
+#mmr-form input{width: 90%;padding: 10px 20px;margin: 8px 0;border-radius: 40px;color: #000000;}
+#mmr-form input::placeholder {color: #AFB8BC;}
+#mmr-form button{width: 90%;background: #1A73E8FF;border-radius: 10px;padding: 17px 30px;font-size: 18px;font-weight: 500;line-height: normal;text-transform: none;margin-top: 15px;border: 1px solid #fff;}
+#mmr-form button:hover{cursor: pointer;}
+#mmr-map{display: none;}
+.mmr-error {
+  color: #b30000;
+  background: #ffe5e5;
+  padding: 10px;
+  border-left: 5px solid #ff4d4d;
+  margin-top: 15px !important;
+  font-weight: 500;
+}
+.mmr-summary-inner{
+    display: flex; align-items: center; gap: 20px;
+}
+.mmr-summary-avg{
+    background: #28a745; color: white; font-size: 2em; padding: 30px; border-radius: 10px;text-align:center;max-width: 200px;
+}
+.mmr-summary-avg.mid{background: #ffcc00;}
+.mmr-summary-avg.low{background: #f00;}
+.mmr-summary-avg .avg-note{display:block;font-size: 14px;}
+.mmr-summary-rank-inner{margin-bottom: 10px;width: 500px;}
+.mmr-summary-rank-inner .rank-title{margin-bottom: 10px;width: 160px;float: left;}
+.mmr-summary-rank-inner .mmr-summary-rank-item{background: #ccc; border-radius: 5px; overflow: hidden;}
+.mmr-summary-rank-wrapper .hide-desktop{display: none;}
+
+.conicmp-block-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 665px;
+    margin: 0 auto 15px;
+    flex-wrap: wrap;
+}
+.conicmp-block-wrapper .conicmp-block-left {
+    width: 38%;
+    display: inline-block;
+}
+.conicmp-block-wrapper .conicmp-block-right {
+    width: 58%;
+    display: inline-block;
+}
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+.conicmp-block-wrapper a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    padding: 19px 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    line-height: 1.1;
+    position: relative;
+    background: #0f0233;
+}
+.conicmp-block-wrapper a .kb-svg-icon-wrap {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.conicmp-block-wrapper  .btn-conic-left {
+    background-color: #1a73e8;
+}
+.conicmp-block-wrapper .conicmp-block-right .btn-conicmpn {
+    padding: 16px 10px;
+}
+.conicmp-block-wrapper .btn-conicmpn::after {
+    padding: 3px;
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background-image: conic-gradient(
+    from var(--angle),
+    #ff4545,
+    #00ff99,
+    #006aff,
+    #ff0095,
+    #ff4545
+  );
+    border-radius: inherit;
+    z-index: -3;
+    animation: spinmcp 4s linear infinite;
+}
+.conicmp-block-wrapper .btn-conicmpn::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), #ff4545, #00ff99, #006aff, #ff0095, #ff4545);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 10px;
+    animation: 4s spinmcp linear infinite;
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+@keyframes spinmcp {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
+.conicmp-block-wrapper a:hover {
+    color: #fff;
+}
+@media only screen and (max-width:767px){
+    .mmr-summary-rank-wrapper .hide-desktop{display: block;}
+    .mmr-summary-rank-wrapper .hide-mobile{display: none;}
+
+}
+
+
+@media only screen and (max-width:640px){
+    .mmr-result-title{font-size: 14px !important;}
+    .mmr-result-title,h2.mmr-result-title,.single-content h2.mmr-result-title{font-size: 20px !important;}
+    .conicmp-block-wrapper .conicmp-block-left{ width: 100%;display: block;}
+    .conicmp-block-wrapper .conicmp-block-right {width: calc(100% - 6px);margin: 0 auto;display: block;}
+}
+@media only screen and (max-width:480px){
+    #mmr-form button{padding: 15px 10px;font-size: 16px;}
+}
